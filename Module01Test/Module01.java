@@ -1,4 +1,7 @@
 package m01;
+
+import java.util.Arrays;
+
 /**
  * Module 01 Test 
  * @author Jefson S
@@ -8,10 +11,10 @@ package m01;
 public class Module01 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println(challenge1("xyz"));
+
+		System.out.println("First letter of Ho Ho Ho! should now be the last letter: " + challenge1("Ho Ho Ho!"));
 		int[] a = {11,2,333,4,6,555,8,777};
-		System.out.println(challenge2(a));
+		System.out.println("print all the single digits numbers and the total count of single digits numbers: " + challenge2(a));
 
 	}
 	/**
@@ -34,7 +37,9 @@ public class Module01 {
 		
 		if(sb.length() <= 3) {
 			return "["+sb+"]";
+			
 		}
+		
 		return sb.toString();
 
 		
