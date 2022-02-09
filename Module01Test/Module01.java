@@ -9,7 +9,7 @@ public class Module01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(challenge1("Ho Ho Ho!"));
+		System.out.println(challenge1("xyz"));
 		int[] a = {11,2,333,4,6,555,8,777};
 		System.out.println(challenge2(a));
 
@@ -21,20 +21,21 @@ public class Module01 {
 	 * @return string based on the string provided as an argument
 	 */
 	public static String challenge1(String str) {
+		
 		if(str == "") {
 			return "["+str+"]";
 		}
-		String str2 = ""; 
 		
-		for(int i = 1; i < str.length(); i++) {
-			str2 = str2 + str.charAt(i);
+		StringBuilder sb = new StringBuilder();
+		String str1 = str.substring(0,1).toLowerCase();
+		String str2 = str.substring(1, str.length()).toLowerCase();
+		
+		sb.append(str2).append(str1);
+		
+		if(sb.length() <= 3) {
+			return "["+sb+"]";
 		}
-		str2 = str2 + str.charAt(0);
-		str2 = str2.toLowerCase();
-		if(str2.length() <= 3) {
-			return "["+str2+"]";
-		}
-		return str2;
+		return sb.toString();
 
 		
 	}
