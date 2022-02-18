@@ -38,9 +38,13 @@ public class Recursion {
 	 * and values in UpperCase.
 	 */
 	public static String toUpper(String str) {
-		String splt = str.replaceAll(".(?=.)", "$0 ");
-		
-		return splt.toUpperCase();
+		if (str.length() < 1) {
+	        return "";
+	    }
+		if(str.length() > 1) {
+			return Character.toUpperCase(str.charAt(0))+ " " +toUpper(str.substring(1));
+		}
+	    return Character.toUpperCase(str.charAt(0)) + toUpper(str.substring(1));
 		
 	}
 	
