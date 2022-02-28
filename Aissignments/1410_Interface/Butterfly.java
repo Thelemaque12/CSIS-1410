@@ -2,6 +2,7 @@ package nuisance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 /**
  * Class Butterfly extends from the class Insect
@@ -19,7 +20,8 @@ public class Butterfly extends Insect{
 	 */
 	public Butterfly(String species, List<String> colors) {
 		super(species);
-		this.colors = colors;
+//		this.colors = colors;
+		this.colors = new ArrayList<String>(colors);
 	}
 	/**
 	 * initializes the fields based on an existing Butterfly object
@@ -27,14 +29,15 @@ public class Butterfly extends Insect{
 	 */
 	public Butterfly(Butterfly butterfly) {
 		super(butterfly.getSpecies());
-		this.colors = butterfly.getColors();
-
-	}
+		this.colors = butterfly.getColors();	
+		}
+	
 	/**
 	 * @return a list of colors
 	 */
 	public List<String> getColors() {
-		return colors;
+		//return colors;
+		return new ArrayList<String>(colors); //defensive copy 
 	}
 
 	@Override
